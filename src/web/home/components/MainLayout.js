@@ -17,8 +17,8 @@ TwoFactorAuthOtpLayout = require("./Login/TwoFactorAuthOtpLayout"),
 /*
 AcceptNewTOSLayout = require("./CurrentUser/AcceptNewTOSLayout"),
 OAuthLayout = require("./OAuthLayout"),
-HomeLayout = require("./HomeLayout");
 */
+HomeLayout = require("./HomeLayout");
 
 class MainLayout extends React.Component {
     render() {
@@ -37,9 +37,9 @@ class MainLayout extends React.Component {
                     <Route path="/home/tosupdated" component={AcceptNewTOSLayout} />
                     <Route path="/home/password" component={PasswordLayout} />
                     <Route path="/home/oauth" component={OAuthLayout} />
+                    */
                     <Route path="/home" component={HomeLayout} />
                     <Route component={HomeLayout} />
-                    */
                 </Switch>
             </main>
     }
