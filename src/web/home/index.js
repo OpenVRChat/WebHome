@@ -7,7 +7,7 @@ var push = require("react-router-redux").push;
 var Route = require("react-router").Route;
 var axios = require("axios");
 //var MainLayout = require("./components/MainLayout");
-//var UnverifiedLayout = require("./components/UnverifiedLayout"); TODO
+//var UnverifiedLayout = require("./components/UnverifiedLayout");
 var Error = require("./components/Common/Error");
 var config = require("./config");
 /* TODO

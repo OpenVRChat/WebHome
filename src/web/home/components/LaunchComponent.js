@@ -38,10 +38,6 @@ class LaunchComponent extends React.Component {
             inviteSent: !1,
             inviteError: !1
         }
-        this.showYoutubeIfAvailable = this.showYoutubeIfAvailable.bind(this);
-        this.renderHotWorlds = this.renderHotWorlds.bind(this);
-        this.onLaunch = this.onLaunch.bind(this);
-        this.sendInvite = this.sendInvite.bind(this);
     }
 
     async componentDidMount() {

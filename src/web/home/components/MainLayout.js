@@ -3,11 +3,11 @@ connect = require("react-redux").connect,
 Route = require("react-router").Route,
 Switch = require("react-router").Switch,
 LaunchLayout = require("./LaunchLayout");
-/* TODO
 EmailNotVerifiedLayout = require("./Login/EmailNotVerifiedLayout"),
 EmailVerifyFailedLayout = require("./Login/EmailVerifyFailedLayout"),
 CriticalLayout = require("./CriticalLayout"),
 UnverifiedLayout = require("./UnverifiedLayout"),
+/*
 LoginLayout = require("./Login/LoginLayout"),
 RegisterLayout = require("./Login/RegistrationLayout"),
 PasswordLayout = require("./Login/RecoverPasswordLayout"),
@@ -25,10 +25,10 @@ class MainLayout extends React.Component{
                     <Route path="/home/launch" component={LaunchLayout} />
                     <Route component={LaunchLayout} />
                     <Route path="/home/verify" component={EmailNotVerifiedLayout} />
-                    /* TODO
                     <Route path="/home/failedverify" component={EmailVerifyFailedLayout} />
                     <Route path="/home/critical" component={CriticalLayout} />
                     <Route path="/home/unverified" component={UnverifiedLayout} />
+                    /* TODO
                     <Route path="/home/login" component={LoginLayout} />
                     <Route path="/home/register" component={RegisterLayout} />
                     <Route path="/home/twofactorauth" component={TwoFactorAuthLayout} />
