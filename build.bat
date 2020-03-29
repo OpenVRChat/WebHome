@@ -1,0 +1,3 @@
+@echo off
+echo Running browserify over babelify...
+browserify src/web/home/index.js -o out/client/home/public/index.js -t [ babelify --presets [ @babel/preset-env @babel/preset-react ] --plugins [ @babel/plugin-transform-classes @babel/plugin-transform-async-to-generator @babel/plugin-transform-regenerator @babel/plugin-transform-react-jsx @babel/plugin-transform-runtime ] ]

@@ -1,0 +1,54 @@
+{
+  "name": "testbrowserify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "@babel/plugin-transform-async-to-generator": "^7.8.3",
+    "@babel/plugin-transform-classes": "^7.9.2",
+    "@babel/plugin-transform-react-jsx": "^7.9.4",
+    "@babel/plugin-transform-regenerator": "^7.8.7",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "axios": "^0.19.2",
+    "diacritic": "0.0.2",
+    "emotion": "^10.0.27",
+    "fold-to-ascii": "^5.0.0",
+    "frozen-moment": "^0.4.0",
+    "node-uuid": "^1.4.8",
+    "printable-characters": "^1.0.42",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-fontawesome": "^1.7.1",
+    "react-redux": "^7.2.0",
+    "react-router": "^5.1.2",
+    "react-router-redux": "^4.0.8",
+    "react-share": "^4.1.0",
+    "react-youtube": "^7.9.0",
+    "reactstrap": "^8.4.1",
+    "redux": "^4.0.5",
+    "unhomoglyph": "^1.0.5",
+    "uniq": "^1.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/runtime": "^7.9.2",
+    "babelify": "^10.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "comments": false
+        }
+      ]
+    ]
+  }
+}
