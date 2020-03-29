@@ -14,6 +14,7 @@ _require = require("../common"),
 getPrettyInstanceType = _require.getPrettyInstanceType,
 _require2 = require("../../../api_v1/tools/utilities"),
 nullOrEmpty = _require2.nullOrEmpty,
+config = require("../config")
 TwitterShareButton = require("react-share").TwitterShareButton,
 TwitterIcon = require("react-share").TwitterIcon,
 YouTube = require("react-youtube").default,
@@ -44,30 +45,30 @@ class LaunchComponent extends React.Component {
     }
 
     async componentDidMount() {
-        axios.get(`${API_ADDRESS}/api/1/config`).then(async function() {
+        axios.get(`${config.API_ADDRESS}/api/1/config`).then(async function() {
             window.apiKey = a.data.clientApiKey;
-            axios.get(`${API_ADDRESS}/api/1/worlds/${this.state.worldId}`).then(r => {
+            axios.get(`${config.API_ADDRESS}/api/1/worlds/${this.state.worldId}`).then(r => {
                 this.setState({ data: r.data })
             }).catch(e => {
                 console.error(e);
                 this.setState({ error: e })
             })
             if(SHOW_SHORTNAME && null == this.state.shortName && null != this.state.worldId && null != this.state.instanceId) {
-                axios.get(`${API_ADDRESS}/api/1/instances/${e.state.worldId}:${e.state.instanceId}/shortName`).then(r => {
+                axios.get(`${config.API_ADDRESS}/api/1/instances/${e.state.worldId}:${e.state.instanceId}/shortName`).then(r => {
                     this.setState({ shortName: r.data })
                 }).catch(e => {
                     console.error(e);
                     this.setState({ error: e })
                 })
             }
-            axios.get(`${API_ADDRESS}/api/1/worlds?featured=false&releaseStatus=public&sort=shuffle&order=descending&n=4&tag=admin_community_spotlight`).then(function(t) {
+            axios.get(`${config.API_ADDRESS}/api/1/worlds?featured=false&releaseStatus=public&sort=shuffle&order=descending&n=4&tag=admin_community_spotlight`).then(function(t) {
                 this.state.data.hotWorlds = t.data;
                 this.forceUpdate();
             }).catch(e => {
                 console.error(e);
                 this.setState({ error: e })
             })
-            axios.get(`${API_ADDRESS}/api/1/auth/user`).then(() => {
+            axios.get(`${config.API_ADDRESS}/api/1/auth/user`).then(() => {
                 this.setState({
                     successfulAuth: !0,
                     showSendInviteLink: null !== this.state.instanceId && "" !== this.state.instanceId
@@ -122,7 +123,7 @@ class LaunchComponent extends React.Component {
     async sendInvite() {
         this.setState({ invitePending: !0 });
         try {
-            await axios.post(`${API_ADDRESS}/api/1/instances/${this.state.worldId}:${this.state.instanceId}/invite`, {});
+            await axios.post(`${config.API_ADDRESS}/api/1/instances/${this.state.worldId}:${this.state.instanceId}/invite`, {});
             this.setState({ inviteSent: !0 })
         }
         catch (e) {

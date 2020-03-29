@@ -13,10 +13,11 @@ React = require("react"),
    changeEmail = require("../../../actions/currentUser").changeEmail,
    resendVerificationEmail = require("../../../actions/currentUser").resendVerificationEmail,
    changeUnsubscribe = require("../../../actions/currentUser").changeUnsubscribe,
-   isThrowawayEmail = require("../../../../../api_v1/tools/pookmail.js").isThrowawayEmail;
+   isThrowawayEmail = require("../../../../../api_v1/tools/pookmail.js").isThrowawayEmail,
+   config = require("../../../config");
 
 var checkEmail = _.debounce(function(e, t, a) {
-   axios.get(`${API_ADDRESS}/api/1/auth/exists?email=${encodeURIComponent(e)}&excludeUserId={t}`).then(function(e) {
+   axios.get(`${config.API_ADDRESS}/api/1/auth/exists?email=${encodeURIComponent(e)}&excludeUserId={t}`).then(function(e) {
        a(e.data.userExists)
    })
 }, 1e3);

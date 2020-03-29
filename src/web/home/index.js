@@ -6,9 +6,10 @@ var ConnectedRouter = require("react-router-redux").ConnectedRouter;
 var push = require("react-router-redux").push;
 var Route = require("react-router").Route;
 var axios = require("axios");
-var MainLayout = require("./components/MainLayout");
+//var MainLayout = require("./components/MainLayout");
 //var UnverifiedLayout = require("./components/UnverifiedLayout"); TODO
 var Error = require("./components/Common/Error");
+var config = require("./config");
 /* TODO
 var store = require("./store").store;
 var history = require("./store").history;
@@ -99,13 +100,13 @@ var loadMainApp = function() {
 */
 var API_ADDRESS = "https://vrchat.com"; // TODO: USE ./config
 console.log("Fetching config");
-axios.get(`${API_ADDRESS}/api/1/config`)
+axios.get(`${config.API_ADDRESS}/api/1/config`)
     .then(function(e) {
         window.apiKey = e.clientApiKey, store.dispatch({
             type: "LOAD_CONFIG_FULFILLED",
             payload: e
         });
-        return axios.get(`${API_ADDRESS}/api/1/auth/user?apiKey=${window.apiKey}`);
+        return axios.get(`${config.API_ADDRESS}/api/1/auth/user?apiKey=${window.apiKey}`);
     }).then(function() {
         return e = (async function() {
             store.dispatch({
@@ -119,7 +120,7 @@ axios.get(`${API_ADDRESS}/api/1/config`)
         $("#loading").remove(),
         $("#secondary-nav").remove(),
         -1 < e.message.indexOf("403")
-            ? ReactDOM.render(React.createElement(UnverifiedLayout, null), app)
+            ? ReactDOM.render(<UnverifiedLayout />, app)
             : -1 < e.message.indexOf("401") || -1 < e.message.indexOf("429")
                 ? exemptPaths.has(window.location.pathname)
                     ? loadMainApp()
@@ -130,6 +131,6 @@ axios.get(`${API_ADDRESS}/api/1/config`)
                         store.dispatch(push("/home/login")),
                         loadMainApp())
                 : -1 < e.message.indexOf("500")
-                    ? ReactDOM.render(React.createElement(Error, { error: e, statusCode: 500 }), app)
-                    : ReactDOM.render(React.createElement(Error, { error: e }), app)
+                    ? ReactDOM.render(<Error error={e} statusCode={500} />, app)
+                    : ReactDOM.render(<Error error={e} />, app)
 });

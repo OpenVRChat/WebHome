@@ -4,7 +4,7 @@ var config = require("../config");
 loadCurrentUser = function() {
     return $("#loading").remove(), {
         type: "LOAD_CURRENT_USER",
-        payload: axios.get(`${config.getApiAddress()}/api/1/auth/user`)
+        payload: axios.get(`${config.API_ADDRESS}/api/1/auth/user`)
     }
 },
 changeName = function(a) {
@@ -13,7 +13,7 @@ changeName = function(a) {
         n = a.currentPassword;
     return {
         type: "CHANGE_NAME",
-        payload: axios.put(`${config.getApiAddress()}/api/1/users/${e}`, {
+        payload: axios.put(`${config.API_ADDRESS}/api/1/users/${e}`, {
             displayName: r,
             currentPassword: n
         })
@@ -25,7 +25,7 @@ changeEmail = function(a) {
         n = a.currentPassword;
     return {
         type: "CHANGE_EMAIL",
-        payload: axios.put(`${config.getApiAddress()}/api/1/users/${e}`, {
+        payload: axios.put(`${config.API_ADDRESS}/api/1/users/${e}`, {
             email: r,
             currentPassword: n
         })
@@ -37,7 +37,7 @@ changePassword = function(a) {
         n = a.currentPassword;
     return {
         type: "CHANGE_PASSWORD",
-        payload: axios.put(`${config.getApiAddress()}/api/1/users/${e}`, {
+        payload: axios.put(`${config.API_ADDRESS}/api/1/users/${e}`, {
             password: r,
             currentPassword: n
         })
@@ -48,7 +48,7 @@ changeUnsubscribe = function(a) {
         r = a.unsubscribe;
     return {
         type: "CHANGE_UNSUBSCRIBE",
-        payload: axios.put(`${config.getApiAddress()}/api/1/users/${e}`, {
+        payload: axios.put(`${config.API_ADDRESS}/api/1/users/${e}`, {
             unsubscribe: r
         })
     }
@@ -56,7 +56,7 @@ changeUnsubscribe = function(a) {
 resendVerificationEmail = function() {
     return {
         type: "RESEND_VERIFICATION",
-        payload: axios.post(`${config.getApiAddress()}/api/1/auth/user/resendEmail`, {})
+        payload: axios.post(`${config.API_ADDRESS}/api/1/auth/user/resendEmail`, {})
     }
 },
 updateTOSAgreement = function(a) {
@@ -64,7 +64,7 @@ updateTOSAgreement = function(a) {
         r = a.acceptedTOSVersion;
     return {
         type: "UPDATE_TOS",
-        payload: axios.put(`${config.getApiAddress()}/api/1/users/${e}`, {
+        payload: axios.put(`${config.API_ADDRESS}/api/1/users/${e}`, {
             acceptedTOSVersion: r
         })
     }
@@ -72,14 +72,14 @@ updateTOSAgreement = function(a) {
 logout = function() {
     return {
         type: "LOGOUT",
-        payload: axios.put(`${config.getApiAddress()}/api/1/logout`, {})
+        payload: axios.put(`${config.API_ADDRESS}/api/1/logout`, {})
     }
 },
 markAccountForDeletion = function(a) {
     var e = a.userId;
     return {
         type: "MARK_USER_FOR_DELETION",
-        payload: axios.put(`${config.getApiAddress()}/api/1/users/${e}/delete`, {})
+        payload: axios.put(`${config.API_ADDRESS}/api/1/users/${e}/delete`, {})
     }
 };
 

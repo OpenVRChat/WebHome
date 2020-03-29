@@ -1,3 +1,3 @@
 module.export = {
-    getApiAddress: () => "https://vrchat.com"
+    API_ADDRESS: "https://vrchat.com"
 }
