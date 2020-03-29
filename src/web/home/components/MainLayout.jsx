@@ -24,8 +24,8 @@ class MainLayout extends React.Component{
                 <Switch>
                     <Route path="/home/launch" component={LaunchLayout} />
                     <Route component={LaunchLayout} />
-                    /* TODO
                     <Route path="/home/verify" component={EmailNotVerifiedLayout} />
+                    /* TODO
                     <Route path="/home/failedverify" component={EmailVerifyFailedLayout} />
                     <Route path="/home/critical" component={CriticalLayout} />
                     <Route path="/home/unverified" component={UnverifiedLayout} />

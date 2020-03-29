@@ -22,11 +22,7 @@ class LaunchLayout extends React.Component {
     }
 
     render() {
-        return React.createElement(LaunchComponent, {
-            worldId: this.state.worldId,
-            instanceId: this.state.instanceId,
-            shortName: this.state.shortName
-        });
+        return <LaunchComponent worldId={this.state.worldId} instanceId={this.state.instanceId} shortName={this.state.shortName} />
     }
 
 }
