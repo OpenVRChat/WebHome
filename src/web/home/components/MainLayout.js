@@ -8,8 +8,8 @@ EmailVerifyFailedLayout = require("./Login/EmailVerifyFailedLayout"),
 CriticalLayout = require("./CriticalLayout"),
 UnverifiedLayout = require("./UnverifiedLayout"),
 LoginLayout = require("./Login/LoginLayout"),
-/*
 RegisterLayout = require("./Login/RegistrationLayout"),
+/*
 PasswordLayout = require("./Login/RecoverPasswordLayout"),
 TwoFactorAuthLayout = require("./Login/TwoFactorAuthLayout"),
 TwoFactorAuthOtpLayout = require("./Login/TwoFactorAuthOtpLayout"),
@@ -28,8 +28,8 @@ class MainLayout extends React.Component {
                     <Route path="/home/critical" component={CriticalLayout} />
                     <Route path="/home/unverified" component={UnverifiedLayout} />
                     <Route path="/home/login" component={LoginLayout} />
-                    /* TODO
                     <Route path="/home/register" component={RegisterLayout} />
+                    /* TODO
                     <Route path="/home/twofactorauth" component={TwoFactorAuthLayout} />
                     <Route path="/home/twofactorauthrecovery" component={TwoFactorAuthOtpLayout} />
                     <Route path="/home/tosupdated" component={AcceptNewTOSLayout} />
