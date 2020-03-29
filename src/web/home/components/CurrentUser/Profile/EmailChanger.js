@@ -176,7 +176,7 @@ class EmailChanger extends React.Component {
                         }
                         <Row>
                             <Col xs="1" style="text-align: right">
-                                <Icon name="at" size="2x">
+                                <Icon name="at" size="2x" />
                             </Col>
                             <Col xs="10">
                                 <Row>
@@ -186,7 +186,7 @@ class EmailChanger extends React.Component {
                                         <Icon name="text-width" /> {this.state.emailError}
                                     </Alert>
                                     }
-                                    {this.state.emailTaken
+                                    {this.state.emailTaken &&
                                     <Alert color="warning">
                                         <Icon name="cookie-bite" /> That email is already in use.
                                     </Alert>
@@ -211,8 +211,8 @@ class EmailChanger extends React.Component {
                             <Col xs="1" style="text-align: left">
                                 {null == this.state.emailTaken &&
                                 <Icon name="spinner" spin={!0} size="2x" />
-                                <Check ok={this.state.emailOk} />
                                 }
+                                <Check ok={this.state.emailOk} />
                             </Col>
                         </Row>
                         {this.state.showConfirmation &&
@@ -258,18 +258,18 @@ class EmailChanger extends React.Component {
                             <Col xs={{size: 4, offset: 4}}>
                                 <Button disabled={this.state.verificationDisabled || n} color="primary" outline={!0} block={!0} id="reverify" name="reverify" onClick={this.sendVerification}>
                                     {!n &&
-                                    <span><Icon name="paper-plane" /> Resend Verification</Icon></span>
+                                    <span><Icon name="paper-plane" /> Resend Verification</span>
                                     }
                                     {n &&
-                                    <span><Icon name="check" color="success" /> Email Verified</Icon></span>
+                                    <span><Icon name="check" color="success" /> Email Verified</span>
                                     }
-                                </Buttom>
+                                </Button>
                             </Col>
                             <Col xs="4">
                                 <Button disabled={!this.state.ready && !a.changing} color="primary" block={!0} id="email-change-submit" name="email-change-submit" value="update">Change Email</Button>
                             </Col>
                         </Row>
-                    </Form>
+                    </form>
                 </div>
             </LoadingLayout>
     }
@@ -281,6 +281,4 @@ module.exports = connect(function(e) {
         currentUser: e.currentUser.databaseUser,
         email: e.currentUser.email
     }
-}
-
-//TODO
+})(EmailChanger);

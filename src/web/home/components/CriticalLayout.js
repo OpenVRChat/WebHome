@@ -23,3 +23,10 @@ class CriticalLayout extends React.Component {
     }
 
 }
+
+module.exports = connect(function(e) {
+    return {
+        statusCode: e.lastAxios.statusCode,
+        error: e.lastAxios.error
+    }
+})(CriticalLayout);

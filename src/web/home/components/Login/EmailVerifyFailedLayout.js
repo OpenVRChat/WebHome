@@ -38,5 +38,6 @@ class EmailVerifyFailedLayout extends React.Component {
                 </Row>
             </Container>
     }
-
 }
+
+module.exports = connect()(EmailVerifyFailedLayout);

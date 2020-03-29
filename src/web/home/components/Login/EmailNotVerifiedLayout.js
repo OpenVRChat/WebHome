@@ -33,7 +33,7 @@ class EmailNotVerifiedLayout extends React.Component {
                                 Before continuing to the application, please check your inbox for a verification email. Sometimes it takes a few minutes. Maybe it's in your spam filter? You can change your email below if you believe it was entered wrong.
                             </p>
                             <EmailChangeLayout />
-                        <Jumbotron>
+                        </Jumbotron>
                         <br />
                         <br />
                         <a href="/home" className="btn btn-primary" color="success">

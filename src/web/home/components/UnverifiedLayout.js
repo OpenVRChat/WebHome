@@ -26,7 +26,7 @@ class UnverifiedLayout extends React.Component {
                 <p><Icon name="plug" size="2x" /></p>
                 <p>It appears something has gone wrong with your login.</p>
                 <p><a href="#" onClick={this.logout} title="logout" className="btn btn-secondary"><Icon name="door-open" />  Log in again?</a></p>
-                <p>Or try going <Link to="/home">home </p>
+                <p>Or try going <Link to="/home">home </Link></p>
                 <hr />
                 <hr />
                 <p>{t} : {r}</p>
@@ -35,3 +35,11 @@ class UnverifiedLayout extends React.Component {
     }
 
 }
+
+module.exports = connect(function(e) {
+    return {
+        statusCode: e.lastAxios.statusCode,
+        error: e.lastAxios.error,
+        errorMessage: e.lastAxios.errorMessage
+    }
+})(UnverifiedLayout);

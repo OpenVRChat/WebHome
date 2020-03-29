@@ -22,13 +22,15 @@
     "react-fontawesome": "^1.7.1",
     "react-redux": "^7.2.0",
     "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
     "react-router-redux": "^4.0.8",
     "react-share": "^4.1.0",
     "react-youtube": "^7.9.0",
     "reactstrap": "^8.4.1",
     "redux": "^4.0.5",
     "unhomoglyph": "^1.0.5",
-    "uniq": "^1.0.1"
+    "uniq": "^1.0.1",
+    "validator": "^13.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
