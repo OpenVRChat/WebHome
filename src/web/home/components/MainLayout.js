@@ -11,7 +11,9 @@ LoginLayout = require("./Login/LoginLayout"),
 RegisterLayout = require("./Login/RegistrationLayout"),
 /*
 PasswordLayout = require("./Login/RecoverPasswordLayout"),
+*/
 TwoFactorAuthLayout = require("./Login/TwoFactorAuthLayout"),
+/*
 TwoFactorAuthOtpLayout = require("./Login/TwoFactorAuthOtpLayout"),
 AcceptNewTOSLayout = require("./CurrentUser/AcceptNewTOSLayout"),
 OAuthLayout = require("./OAuthLayout"),
@@ -29,8 +31,8 @@ class MainLayout extends React.Component {
                     <Route path="/home/unverified" component={UnverifiedLayout} />
                     <Route path="/home/login" component={LoginLayout} />
                     <Route path="/home/register" component={RegisterLayout} />
-                    /* TODO
                     <Route path="/home/twofactorauth" component={TwoFactorAuthLayout} />
+                    /* TODO
                     <Route path="/home/twofactorauthrecovery" component={TwoFactorAuthOtpLayout} />
                     <Route path="/home/tosupdated" component={AcceptNewTOSLayout} />
                     <Route path="/home/password" component={PasswordLayout} />

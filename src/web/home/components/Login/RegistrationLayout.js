@@ -481,3 +481,12 @@ class RegistrationPage extends React.Component {
                                             "Create Account"))))))))
     }
 }
+
+module.exports = connect(function(e) {
+    return {
+        error: e.register.error,
+        loading: e.register.loading,
+        loggedIn: e.register.loggedIn,
+        currentTOSVersion: e.config.config.currentTOSVersion
+    }
+})(RegistrationPage);
