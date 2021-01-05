@@ -10,7 +10,7 @@
     "@babel/plugin-transform-regenerator": "^7.8.7",
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.4",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "diacritic": "0.0.2",
     "emotion": "^10.0.27",
     "fold-to-ascii": "^5.0.0",
